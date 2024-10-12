@@ -51,6 +51,7 @@ package "タスク集約(TaskAggregation)" {
         　自動的に親タスクのTaskStatusも「終了済み」にする
         ・親タスクの持っている子タスクの中のどれか一つでもTaskStatusが「終了済み」以外の場合に
         　もし親タスクのTaskStatusが「終了済み」だったら、TaskStatusを「進行中」に戻す
+        ・グループが削除されたら、そのグループが持っているタスクも削除する
     end note
 
     note bottom of TaskId
@@ -58,7 +59,8 @@ package "タスク集約(TaskAggregation)" {
     end note
 
     note bottom of TaskAssignee
-        TaskAssigneeはidentityManagementコンテキストから取得したUserIdを設定する
+        ・TaskAssigneeはidentityManagementコンテキストから取得したUserIdを設定する
+        ・担当者なしも設定できるようにする
     end note
 
     note bottom of TaskName
