@@ -14,6 +14,32 @@ package "タスク集約(TaskAggregation)" {
         taskOverview タスクの概要: string
         parentTaskId 親タスクのID: TaskId|null
     }
+
+    class TaskId {
+        - value: string
+    }
+
+    class GroupId {
+        - value: string
+    }
+
+    class TaskAssignee {
+        - value: string
+    }
+
+    
+
+    note bottom of TaskId
+        TaskIdはULIDなどの時系列ソート可能なIDを用いる
+    end note
+
+    note bottom of GroupId
+        GroupIdはidentityManagementコンテキストから取得したID
+    end note
+
+    note bottom of TaskAssignee
+        TaskAssigneeはidentityManagementコンテキストから取得したUserId
+    end note
 }
 
 @enduml
