@@ -1,0 +1,19 @@
+@startuml タスク集約
+
+title タスク集約
+
+package "タスク集約(TaskAggregation)" {
+    class Task << (R,red) RootEntity >> {
+        taskId: TaskId
+        groupId: GroupId
+        taskAssignee タスク担当者: TaskAssignee
+        taskName: TaskName
+        taskStatus: TaskStatus
+        progressRate: ProgressRate
+        taskDeadline: TaskDeadline
+        taskOverview タスクの概要: string
+        parentTaskId 親タスクのID: TaskId|null
+    }
+}
+
+@enduml
